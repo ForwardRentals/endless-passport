@@ -1,10 +1,9 @@
 name: Deploy to GitHub Pages
 
-# Manual trigger only while the repo is private (GitHub Pages needs a public
-# repo on the free plan). At launch: make the repo public, enable Pages
-# (Settings → Pages → Source: GitHub Actions), and add `push: branches: [main]`.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
