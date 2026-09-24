@@ -179,7 +179,7 @@ export function Sponsor() {
             style={{ background: DARK }}
           >
             {[
-              { value: "400+", label: "Live Events" },
+              { value: "500+", label: "Live Events" },
               { value: "3,000+", label: "Audience Members" },
               { value: "60+", label: "Countries of Content" },
             ].map((s) => (

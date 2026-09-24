@@ -32,7 +32,7 @@ import p23 from "figma:asset/64b4accbe2b9d8907b26cdb9a9ae53afc258153a.png";
 import p24 from "figma:asset/74f0ef289d66b7a34d519c586efedf75b5dc575e.png";
 import p25 from "figma:asset/7780cf305e02a745b67a137aa3cf4dceb4fabaf1.png";
 import p26 from "figma:asset/b784058e2b4d1d02112651c3aca123a63d1935c9.png";
-import p27 from "figma:asset/101ba4e7abb1325312c74bf8be4e5b0724bf7992.png";
+// p27 removed — dead elephant photo
 import p28 from "figma:asset/be242b76c69df4cbb0347ee5e0a0477f3978a300.png";
 import p29 from "figma:asset/cc50cdf86b0986f705d6f47cb788ab446995619f.png";
 import p30 from "figma:asset/85ee2aa297c54fe33e071c768f9dbb3a89ebc569.png";
@@ -49,11 +49,11 @@ import p40 from "figma:asset/387a303640a6b5133252459cadcc03c78fae0812.png";
 // p41 removed — Ponte Vecchio reflection looks like two images stacked
 // p42 removed — Figma composite frame export (collage of 3–4 photos, not a real single photo)
 
-// All 38 confirmed-valid photos (p36, p37, p41, p42 removed)
+// All 37 confirmed-valid photos (p27, p36, p37, p41, p42 removed)
 const ALL_PHOTOS: string[] = [
   p01, p02, p03, p04, p05, p06, p07, p08, p09, p10,
   p11, p12, p13, p14, p15, p16, p17, p18, p19, p20,
-  p21, p22, p23, p24, p25, p26, p27, p28, p29, p30,
+  p21, p22, p23, p24, p25, p26, p28, p29, p30,
   p31, p32, p33, p34, p35, p38, p39, p40,
 ];
 

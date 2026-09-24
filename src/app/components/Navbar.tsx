@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Events", href: "/events" },
   { label: "Book a Talk", href: "/book-a-talk" },
-  { label: "Shop", href: "https://www.etsy.com/shop/endlesspassport", external: true },
   { label: "Consultations", href: "/consultations" },
   { label: "Sponsor", href: "/sponsor" },
 ];

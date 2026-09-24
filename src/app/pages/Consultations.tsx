@@ -197,11 +197,8 @@ export function Consultations() {
       <section className="py-4 px-4" style={{ background: "#FAFAF8" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-3 md:grid-cols-5 gap-3">
           {expertPhotos.map((img, i) => (
-            <a
+            <div
               key={i}
-              href="https://www.etsy.com/shop/endlesspassport"
-              target="_blank"
-              rel="noopener noreferrer"
               className="block aspect-square overflow-hidden rounded-lg relative group"
             >
               <img
@@ -209,13 +206,7 @@ export function Consultations() {
                 alt="Brian's travels"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                style={{ background: "rgba(13,30,38,0.45)" }}
-              >
-                <span className="text-white text-xs font-semibold tracking-wide uppercase">Shop</span>
-              </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>

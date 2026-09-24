@@ -88,6 +88,14 @@ import ttlSnorkeling from "figma:asset/7dde56528b54a759e67b9dabd3ba0c699f2350f1.
 import ttlCappadocia from "figma:asset/9da4ab86d27ddf8f719a0b13c367103420d8feef.png"; // Hot air balloons over Cappadocia at sunset, Türkiye
 import ttlColombia   from "figma:asset/c413a27a60b6ef0c2b9f6676f934dde98320f37a.png"; // Café with local teens abroad
 
+// Epic Everest Base Camp photos
+import everestSunset       from "../../imports/everest-sunset.webp"; // Mount Everest glowing at sunset
+import everestGuides       from "../../imports/everest-guides.webp"; // local guides and porter, Ama Dablam behind
+import everestLukla        from "../../imports/everest-lukla-airport.webp"; // propeller plane at Lukla airport
+import everestKids         from "../../imports/everest-kids.webp"; // Brian selfie with Himalayan kids
+import everestPrayerFlags  from "../../imports/everest-prayer-flags.webp"; // Tibetan Buddhist prayer flags at dawn
+import everestTeaHouse     from "../../imports/everest-tea-house.webp"; // family-owned tea house dining room
+
 // Gorgeous Georgia photos
 import georgiaGlacierAutumn from "../../imports/IMG_2263.webp"; // Shkhara Glacier with autumn foliage
 import georgiaKhinkali from "../../imports/IMG_3004.webp"; // Khinkali dumplings cooking class
@@ -182,6 +190,13 @@ const IMGS = {
   caminoViana:       photoCaminoViana,
   caminoPilgrims:    photoCaminoPilgrims,
   caminoSantiagoNew: photoCaminoSantiagoNew,
+  // Epic Everest Base Camp
+  everestSunset:      everestSunset,
+  everestGuides:      everestGuides,
+  everestLukla:       everestLukla,
+  everestKids:        everestKids,
+  everestPrayerFlags: everestPrayerFlags,
+  everestTeaHouse:    everestTeaHouse,
   // Gorgeous Georgia
   georgiaGlacierAutumn: georgiaGlacierAutumn,
   georgiaKhinkali:      georgiaKhinkali,
@@ -330,6 +345,27 @@ export const programs: { id: number; title: string; desc: string; duration: stri
       ],
     },
   },
+  // ── Epic Everest Base Camp ───────────────────────────────────────────────────
+  {
+    id: 17, isNew: true,
+    title: "Epic Everest Base Camp",
+    desc: "Brian's toughest climb: a harrowing two-week journey from Kathmandu deep into the Himalayas, trekking to Nepal's world-famous Everest Base Camp — tea houses, Tibetan Buddhism, and the world's kindest people.",
+    duration: "60 min",
+    image: IMGS.everestSunset, imgPos: "center center",
+    detail: {
+      fullDesc: "Join seasoned traveler Brian Michalski on his toughest climb: a harrowing two-week journey from Kathmandu deep into the Himalayas, trekking to Nepal's world-famous Everest Base Camp. Along the way, discover the realities of planning and preparation, health and safety precautions, overnighting in tea houses, local cuisine, Tibetan Buddhism, and other insights into the world's kindest people. Our adventure concludes with a Q&A.\n\nThis talk appeals to armchair travelers who want to experience the adventure vicariously, as well as those considering their own Base Camp trek. It blends exploration, world cultures, geography, and nature with practical insights. Patrons learn about Tibetan Buddhism, daily life in the Himalayas, and Nepalese culture. Attendees get a front-row seat to one of the world's most extraordinary journeys.",
+      mission: STD_MISSION, audiences: STD_AUDIENCES, pricing: STD_PRICING,
+      note: "As a LACONI Highly Effective Library Presenter, I have performed over 500 in-person and virtual programs about my worldwide adventures, partnering with over 125 local organizations. See my full calendar here.",
+      photos: [
+        { src: IMGS.everestSunset,      caption: "Mount Everest at sunset",                                                                               pos: "center center" },
+        { src: IMGS.everestGuides,      caption: "Our group's amazing local guides and porter who kept us safe along the way",                           pos: "center center" },
+        { src: IMGS.everestLukla,       caption: "Landing in a tiny propeller plane at the world's most dangerous airport is an experience I won't soon forget!", pos: "center center" },
+        { src: IMGS.everestKids,        caption: "Sweet kids living in the Himalayas were so excited to practice their English!",                         pos: "center center" },
+        { src: IMGS.everestPrayerFlags, caption: "Tibetan Buddhist prayer flags spread blessings on the wind; each color representing an element in nature", pos: "center center" },
+        { src: IMGS.everestTeaHouse,    caption: "Most of the tea houses we overnighted in were multi-generationally family-owned establishments",       pos: "center center" },
+      ],
+    },
+  },
   // ── Gorgeous Georgia ─────────────────────────────────────────────────────────
   {
     id: 16, isNew: true,
@@ -433,7 +469,7 @@ export const programs: { id: number; title: string; desc: string; duration: stri
   },
   // ── Travel Truths: Lessons Learned Abroad ────────────────────────────────────
   {
-    id: 15, isNew: true,
+    id: 15, isNew: false,
     title: "Travel Truths: Lessons Learned Abroad",
     desc: "Five years, 60+ countries, six continents — Brian distills powerful lessons about resilience, perspective, and the human connection through the best of 30,000 original photographs and compelling storytelling.",
     duration: "60 min",
@@ -607,7 +643,6 @@ export function BookATalk() {
               aspect=""
               animate={false}
               className="h-full overflow-hidden"
-              linkUrl="https://www.etsy.com/shop/endlesspassport"
             />
           </div>
           <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, ${darkRgba(0.3)} 0%, transparent 40%)` }} />
@@ -679,6 +714,69 @@ export function BookATalk() {
         </div>
       </section>
 
+      {/* ─── EPIC EVEREST BASE CAMP FEATURED ─── */}
+      <section className="py-16 px-4" style={{ background: DARK }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+            <div>
+              <span className="inline-block px-2.5 py-1 rounded text-xs uppercase tracking-widest mb-3" style={{ background: GOLD, color: "white", fontWeight: 700 }}>✦ New Program</span>
+              <h2 className="text-white" style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, lineHeight: 1.1 }}>Epic Everest Base Camp</h2>
+              <p className="mt-3 max-w-xl" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.97rem", lineHeight: 1.65 }}>
+                Brian's toughest climb yet: a harrowing two-week trek from Kathmandu deep into the Himalayas to Nepal's world-famous Everest Base Camp. Tea houses, Tibetan Buddhism, and the world's kindest people along the way.
+              </p>
+            </div>
+            <a href="#booking-form" className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ background: `linear-gradient(135deg, ${GOLD}, #c8821a)`, color: "white", fontWeight: 600, fontSize: "0.9rem" }}>
+              Book This Talk <ArrowRight size={15} />
+            </a>
+          </div>
+          {/* Mobile: stacked layout */}
+          <div className="sm:hidden flex flex-col gap-1 rounded-2xl overflow-hidden cursor-pointer" onClick={() => openProgram(programs.find(p => p.id === 17)!)}>
+            <div className="relative h-52 overflow-hidden" style={{ background: "#111" }}>
+              <img src={IMGS.everestSunset} alt="Mount Everest glowing at sunset" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center center" }} />
+              <div className="absolute bottom-0 left-0 right-0 px-4 py-2" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)" }}>
+                <p className="text-white text-xs" style={{ fontStyle: "italic", opacity: 0.85 }}>Mount Everest at Sunset</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-1 h-36">
+              <div className="relative overflow-hidden rounded-bl-2xl" style={{ background: "#111" }}>
+                <img src={IMGS.everestPrayerFlags} alt="Tibetan Buddhist prayer flags" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center center" }} />
+                <div className="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Tibetan Prayer Flags</div>
+              </div>
+              <div className="relative overflow-hidden rounded-br-2xl" style={{ background: "#111" }}>
+                <img src={IMGS.everestLukla} alt="Propeller plane at Lukla airport" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center center" }} />
+                <div className="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Landing in Lukla</div>
+              </div>
+            </div>
+          </div>
+          {/* Desktop: bento grid */}
+          <div className="!hidden sm:!block rounded-2xl overflow-hidden cursor-pointer" onClick={() => openProgram(programs.find(p => p.id === 17)!)}>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gridTemplateRows: "220px 220px", gap: "5px" }}>
+              <div className="group relative overflow-hidden" style={{ gridColumn: "1", gridRow: "1 / 3", background: "#111" }}>
+                <img src={IMGS.everestSunset} alt="Mount Everest glowing at sunset" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center center" }} />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)" }}>
+                  <p className="text-white text-xs" style={{ fontStyle: "italic", opacity: 0.85 }}>Mount Everest at Sunset</p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden" style={{ background: "#111" }}>
+                <img src={IMGS.everestPrayerFlags} alt="Tibetan Buddhist prayer flags" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center center" }} />
+                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Tibetan Prayer Flags</div>
+              </div>
+              <div className="group relative overflow-hidden" style={{ background: "#111" }}>
+                <img src={IMGS.everestLukla} alt="Propeller plane at Lukla airport" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center center" }} />
+                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Landing in Lukla</div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-5 flex flex-wrap items-center gap-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.45)", fontSize: "0.83rem" }}>
+            <span className="flex items-center gap-1.5"><Clock size={13} style={{ color: GOLD }} /> 60 min · 55-min presentation + live Q&amp;A</span>
+            <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
+            <span>In-person (Chicagoland) or Virtual via Zoom</span>
+            <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
+            <span>Libraries · Senior Facilities · Corporate · Schools</span>
+          </div>
+        </div>
+      </section>
+
       {/* ─── GORGEOUS GEORGIA FEATURED ─── */}
       <section className="py-16 px-4" style={{ background: DARK }}>
         <div className="max-w-6xl mx-auto">
@@ -729,69 +827,6 @@ export function BookATalk() {
               <div className="group relative overflow-hidden" style={{ background: "#111" }}>
                 <img src={IMGS.georgiaKazbegiSelfie} alt="Kazbegi Glacier" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center 30%" }} />
                 <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Kazbegi Glacier Hike</div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-5 flex flex-wrap items-center gap-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.45)", fontSize: "0.83rem" }}>
-            <span className="flex items-center gap-1.5"><Clock size={13} style={{ color: GOLD }} /> 60 min · 55-min presentation + live Q&amp;A</span>
-            <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
-            <span>In-person (Chicagoland) or Virtual via Zoom</span>
-            <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
-            <span>Libraries · Senior Facilities · Corporate · Schools</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TRAVEL TRUTHS FEATURED ─── */}
-      <section className="py-16 px-4" style={{ background: DARK }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
-            <div>
-              <span className="inline-block px-2.5 py-1 rounded text-xs uppercase tracking-widest mb-3" style={{ background: GOLD, color: "white", fontWeight: 700 }}>✦ New Program</span>
-              <h2 className="text-white" style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, lineHeight: 1.1 }}>Travel Truths: Lessons Learned Abroad</h2>
-              <p className="mt-3 max-w-xl" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.97rem", lineHeight: 1.65 }}>
-                Five years. 60+ countries. Six continents. Brian distills powerful, humorous, and heartfelt lessons about resilience, perspective, and the enduring kindness of strangers — brought to life through the best of 30,000 original photographs.
-              </p>
-            </div>
-            <a href="#booking-form" className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ background: `linear-gradient(135deg, ${GOLD}, #c8821a)`, color: "white", fontWeight: 600, fontSize: "0.9rem" }}>
-              Book This Talk <ArrowRight size={15} />
-            </a>
-          </div>
-          {/* Mobile: stacked layout */}
-          <div className="sm:hidden flex flex-col gap-1 rounded-2xl overflow-hidden cursor-pointer" onClick={() => openProgram(programs.find(p => p.id === 15)!)}>
-            <div className="relative h-52 overflow-hidden" style={{ background: "#111" }}>
-              <img src={ttlKidsSelfie} alt="Brian selfie with kids" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center 35%" }} />
-              <div className="absolute bottom-0 left-0 right-0 px-4 py-2" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)" }}>
-                <p className="text-white text-xs" style={{ fontStyle: "italic", opacity: 0.85 }}>Making Friends Along the Way</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-1 h-36">
-              <div className="relative overflow-hidden rounded-bl-2xl" style={{ background: "#111" }}>
-                <img src={ttlOrangutan} alt="Wild orangutan, Borneo" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center 40%" }} />
-                <div className="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Wild Orangutans, Borneo</div>
-              </div>
-              <div className="relative overflow-hidden rounded-br-2xl" style={{ background: "#111" }}>
-                <img src={ttlSnorkeling} alt="Scuba diving with tropical fish" className="w-full h-full object-cover scale-[1.08]" style={{ objectPosition: "center center" }} />
-                <div className="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Scuba Diving, Southeast Asia</div>
-              </div>
-            </div>
-          </div>
-          {/* Desktop: bento grid */}
-          <div className="!hidden sm:!block rounded-2xl overflow-hidden cursor-pointer" onClick={() => openProgram(programs.find(p => p.id === 15)!)}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gridTemplateRows: "220px 220px", gap: "5px" }}>
-              <div className="group relative overflow-hidden" style={{ gridColumn: "1", gridRow: "1 / 3", background: "#111" }}>
-                <img src={ttlKidsSelfie} alt="Brian selfie with kids" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center 35%" }} />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)" }}>
-                  <p className="text-white text-xs" style={{ fontStyle: "italic", opacity: 0.85 }}>Making Friends Along the Way</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden" style={{ background: "#111" }}>
-                <img src={ttlOrangutan} alt="Wild orangutan, Borneo" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center 40%" }} />
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Wild Orangutans, Borneo</div>
-              </div>
-              <div className="group relative overflow-hidden" style={{ background: "#111" }}>
-                <img src={ttlSnorkeling} alt="Scuba diving with tropical fish" className="w-full h-full object-cover transition-transform duration-700 scale-[1.08] group-hover:scale-[1.14]" style={{ objectPosition: "center center" }} />
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-xs" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.9)" }}>Scuba Diving, Southeast Asia</div>
               </div>
             </div>
           </div>

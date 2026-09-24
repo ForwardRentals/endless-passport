@@ -139,7 +139,7 @@ export function About() {
               {[
                 { value: "60+", label: "Countries" },
                 { value: "5+ Yrs", label: "Traveling" },
-                { value: "400+", label: "Events" },
+                { value: "500+", label: "Events" },
               ].map((s) => (
                 <div key={s.label}>
                   <div

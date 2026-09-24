@@ -25,6 +25,7 @@ import {
   photoAngkorWat,
   photoMountainRange,
 } from "../brianImages";
+import photoEverestSunset from "../../imports/everest-sunset.webp";
 
 const FB_PAGE_URL   = "https://www.facebook.com/endlesspassport";
 const FB_EVENTS_URL = "https://www.facebook.com/endlesspassport/events";
@@ -48,6 +49,7 @@ function getPhotoForTitle(title: string): string {
   if (t.includes("south america") || t.includes("patagonia")) return photoPataTorres;
   if (t.includes("australia"))                                return photoAusSydney;
   if (t.includes("camino"))                                   return photoCaminoSantiago;
+  if (t.includes("everest"))                                  return photoEverestSunset;
   if (t.includes("machu") || t.includes("peru"))             return photoMachuPicchu;
   if (t.includes("angkor") || t.includes("cambodia"))        return photoAngkorWat;
   if (t.includes("cappadocia") || t.includes("turkey"))      return photoSpinCappadocia;
@@ -695,7 +697,7 @@ export function Events() {
                 </p>
                 <h2 className="text-white mb-2"
                   style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 700 }}>
-                  400+ Events
+                  500+ Events
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", maxWidth: 440, lineHeight: 1.6 }}>
                   For over eight years, Brian has presented at libraries, senior living facilities, community centers, schools, and more across
@@ -723,7 +725,7 @@ export function Events() {
           <div className="mt-10 grid grid-cols-3 gap-4 pt-8"
             style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
             {[
-              { value: "400+",   label: "Events Presented" },
+              { value: "500+",   label: "Events Presented" },
               { value: "125+",   label: "Partners"          },
               { value: "8+ Yrs", label: "Of Storytelling"   },
             ].map((stat) => (

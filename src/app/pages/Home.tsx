@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from "m
 import { Link, useNavigate } from "react-router";
 import { programs } from "./BookATalk";
 import { TalkModal } from "../components/TalkModal";
-import { ArrowRight, MapPin, Users, Globe, Star, ChevronDown, ExternalLink } from "lucide-react";
+import { ArrowRight, MapPin, Users, Globe, Star, ChevronDown } from "lucide-react";
 import { DARK, GOLD, darkRgba, goldGradient } from "../siteTheme";
 import { AnimateIn, StaggerIn } from "../components/AnimateIn";
 import { projectId, publicAnonKey } from "../../../utils/supabase/info";
@@ -41,7 +41,7 @@ import heroCarousel21 from "figma:asset/487a222de617e67c895ee50c7423cac2b05cff50
 // ─── Destination card images ─────────────────────────────────────────────────
 import destJapan      from "figma:asset/a76977334462ee2f11d9fdb5dc397b5886d2209e.png"; // Brian at Mt. Fuji — matches BookATalk id:0 hero
 import destGeorgia    from "../../imports/IMG_2263.webp"; // Shkhara Glacier with autumn foliage — matches BookATalk id:16 hero
-import destCamino     from "figma:asset/004ab1881508db4eb06cc2cd067daeeaaa8896ed.png"; // Santiago de Compostela statue — matches BookATalk id:7 hero
+import destEverest    from "../../imports/everest-sunset.webp"; // Mount Everest glowing at sunset — matches BookATalk id:17 hero
 import destAustralia  from "figma:asset/50fc839b25943bf862a8b35578f720d516ff8283.png"; // Uluru — matches BookATalk id:6 hero
 import destTravelTruths from "figma:asset/cd03ef83d052be0da83b4bda4575a8d83b766959.png"; // Brian selfie with kids — Travel Truths id:15 hero
 import destWestAfrica from "figma:asset/e2eaff343f1c6f2b01e267e978ff592ec1446fd5.png"; // Boubou dunes — matches BookATalk id:12 hero
@@ -58,7 +58,6 @@ import {
   photoRockArch,
   photoLanternFestival,
   photoMachuPicchu,
-  photoRainbowMtn,
   photoSingaporeNight,
   photoGardenLights,
   photoFireworks1,
@@ -113,10 +112,10 @@ const destinations = [
   },
   {
     id: 3,
-    talkId: 7,
-    name: "Conquering the Camino",
-    image: destCamino,
-    tag: "Portugal to Spain, Europe",
+    talkId: 17,
+    name: "Epic Everest Base Camp",
+    image: destEverest,
+    tag: "Nepal, Himalayas",
   },
   {
     id: 4,
@@ -728,7 +727,7 @@ export function Home() {
           {[
             { icon: <Globe size={22} />, value: 60, suffix: "+",    label: "Countries Visited"  },
             { icon: <MapPin size={22} />, value: 5, suffix: "+ Yrs", label: "Solo Backpacking"   },
-            { icon: <Users size={22} />, value: 400, suffix: "+",    label: "Events Presented"   },
+            { icon: <Users size={22} />, value: 500, suffix: "+",    label: "Events Presented"   },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col items-center gap-1">
               <motion.div
@@ -870,7 +869,7 @@ export function Home() {
       {/* ─── PHOTO STRIP ─── */}
       <section className="hidden sm:block py-4 px-4" style={{ background: "#FAFAF8" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-4 gap-3">
-          <PhotoStrip pool={stripPhotos4} count={4} aspect="aspect-video" linkUrl="https://www.etsy.com/shop/endlesspassport" />
+          <PhotoStrip pool={stripPhotos4} count={4} aspect="aspect-video" />
         </div>
       </section>
 
@@ -886,7 +885,7 @@ export function Home() {
             </h2>
           </AnimateIn>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
                 img: scubaFishHero,
@@ -896,14 +895,6 @@ export function Home() {
                 href: "/book-a-talk",
               },
               {
-                img: photoRainbowMtn,
-                alt: "Rainbow Mountain from Brian's travel photography collection",
-                title: "Shop Travel Prints",
-                body: "Bring the world into your home with high-quality prints from Brian's original travel photography collection, captured during five years traveling the globe.",
-                href: "https://www.etsy.com/shop/endlesspassport",
-                external: true,
-              },
-              {
                 img: pelourinhoSalvador,
                 alt: "Colourful colonial buildings of Pelourinho square, Salvador, Brazil",
                 title: "Travel Consultations",
@@ -911,12 +902,6 @@ export function Home() {
                 href: "/consultations",
               },
             ].map((card, i) => {
-              const isExternal = (card as any).external;
-              const LinkComponent = isExternal ? 'a' : Link;
-              const linkProps = isExternal
-                ? { href: card.href, target: "_blank", rel: "noopener noreferrer" }
-                : { to: card.href };
-
               return (
               <motion.div
                 key={card.title}
@@ -939,13 +924,13 @@ export function Home() {
                     {card.body}
                   </p>
                   <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 300 }}>
-                    <LinkComponent
-                      {...linkProps}
+                    <Link
+                      to={card.href}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm"
                       style={{ background: DARK, color: "white", fontWeight: 500 }}
                     >
-                      {isExternal ? "Visit Shop" : "Learn More"} {isExternal ? <ExternalLink size={15} /> : <ArrowRight size={15} />}
-                    </LinkComponent>
+                      Learn More <ArrowRight size={15} />
+                    </Link>
                   </motion.div>
                 </div>
               </motion.div>
@@ -958,7 +943,7 @@ export function Home() {
       {/* ─── COLLAGE STRIP ─── */}
       <section className="hidden sm:block py-4 px-4" style={{ background: "#FAFAF8" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-5 gap-3">
-          <PhotoStrip pool={stripPhotos5} count={5} aspect="aspect-square" linkUrl="https://www.etsy.com/shop/endlesspassport" />
+          <PhotoStrip pool={stripPhotos5} count={5} aspect="aspect-square" />
         </div>
       </section>
 

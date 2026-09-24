@@ -132,21 +132,6 @@ export function Footer() {
               <li>
                 <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
                   <a
-                    href="https://www.etsy.com/shop/endlesspassport"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "rgba(255,255,255,0.6)" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = GOLD)}
-                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
-                    className="transition-colors"
-                  >
-                    Shop
-                  </a>
-                </motion.div>
-              </li>
-              <li>
-                <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
-                  <a
                     href="mailto:brian@endlesspassport.com"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                     onMouseEnter={e => (e.currentTarget.style.color = GOLD)}
